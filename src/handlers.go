@@ -111,7 +111,6 @@ func WebSockectConnection(writer http.ResponseWriter, request *http.Request) {
 	SendTransactions(map[*websocket.Conn]bool{ws: true})
 	stopTime := time.Now()
 	printLog(request, startTime, stopTime)
-	defer ws.Close()
 }
 
 // SendTransactions - send transactions at clients
