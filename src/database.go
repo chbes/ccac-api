@@ -42,7 +42,7 @@ func GetUsers() ([]string, error) {
 	defer closeSession(session)
 	transactionCollection := getTransactionCollection(session)
 	users := []string{}
-	err := transactionCollection.Find(nil).Distinct("user", &users)
+	err := transactionCollection.Find(nil).Sort("user").Distinct("user", &users)
 	return users, err
 }
 
