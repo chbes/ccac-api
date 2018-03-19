@@ -17,40 +17,42 @@ type Route struct {
 // Routes - Array of route
 type Routes []Route
 
+const apiName = "/ccac-api"
+
 var routes = Routes{
 
 	Route{
 		"Welcome",
 		"GET",
-		"/",
+		apiName + "/",
 		Welcome,
 	},
 
 	Route{
 		"GetTransactionsHandler",
 		"GET",
-		"/transactions",
+		apiName + "/transactions",
 		GetTransactionsHandler,
 	},
 
 	Route{
 		"CreateTransactionHandler",
 		"POST",
-		"/transactions",
+		apiName + "/transactions",
 		CreateTransactionHandler,
 	},
 
 	Route{
 		"GetUsersHandler",
 		"GET",
-		"/users",
+		apiName + "/users",
 		GetUsersHandler,
 	},
 
 	Route{
 		"WebSockectConnection",
 		"GET",
-		"/ws",
+		apiName + "/ws",
 		WebSockectConnection,
 	},
 }
