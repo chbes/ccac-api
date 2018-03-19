@@ -83,6 +83,8 @@ func CreateTransactionHandler(writer http.ResponseWriter, request *http.Request)
 // GetUsersHandler - Return all users
 func GetUsersHandler(writer http.ResponseWriter, request *http.Request) {
 	startTime := time.Now()
+	// Delay for simulate loading webapp
+	time.Sleep(3 * time.Second)
 	writer.Header().Set("content-type", "application/json")
 	writer.Header().Add("Access-Control-Allow-Origin", "*")
 	users, err := GetUsers()
