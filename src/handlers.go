@@ -51,6 +51,8 @@ func GetTransactionsHandler(writer http.ResponseWriter, request *http.Request) {
 // CreateTransactionHandler - Create a transaction
 func CreateTransactionHandler(writer http.ResponseWriter, request *http.Request) {
 	startTime := time.Now()
+	// Delay for simulate loading webapp
+	time.Sleep(3 * time.Second)
 	writer.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	writer.Header().Add("Access-Control-Allow-Origin", "*")
 
